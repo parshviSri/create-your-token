@@ -4,14 +4,12 @@ import { useState } from "react";
 
 interface FormData {
   address: string;
-  amount: number
   powers: string[];
 }
 
 
 interface MyFormState {
   address: string;
-  amount: number;
   powers: string[];
 }
 const POWERS =["Elemental manipulation", "Mind control", "Telekinesis","Immorality","Invisibility" ];
@@ -19,7 +17,6 @@ const POWERS =["Elemental manipulation", "Mind control", "Telekinesis","Immorali
 const MyForm: React.FC = () => {
   const [formData, setFormData] = useState<MyFormState>({
     address:"",
-    amount:0,
     powers: POWERS
   });
 
@@ -43,13 +40,7 @@ const MyForm: React.FC = () => {
         placeholder="Enter the sender address"
         className="px-4 py-2 border-gray-300 border rounded-md focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500 flex-grow"
       />
-      <input
-        type="number"
-        name="amount"
-        onChange={handleInputChange}
-        placeholder="Enter the amount"
-        className="px-4 py-2 border-gray-300 border rounded-md focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500 flex-grow"
-      />
+
       <div className="w-full p-2">
         <select
           id="interests"
